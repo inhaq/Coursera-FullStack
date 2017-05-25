@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Online Dating</title>
+    <style>
+        body {
+            font-weight: 700;
+        }
+
+        fieldset {
+            background: lightyellow;
+            border: 10px solid yellow;
+            margin-bottom: 10px;
+            width: 720px;
+        }
+
+        label {
+            width: 180px;
+            display: inline-block;
+            text-align: right;
+            vertical-align: top;
+        }
+
+        label[for="contact"] {
+            width: auto;
+        }
+
+        .low {
+            background-color: maroon;
+            color: white;
+            font-weight: 100;
+            width: 20px;
+            vertical-align: top;
+            padding: 2px 5px;
+        }
+
+        .high {
+            background-color: purple;
+            color: white;
+            font-weight: 100;
+            width:20px;
+            vertical-align: top;
+            padding: 2px 5px;
+
+        }
+        select {
+            background-color: white;
+        }
+
+        textarea {
+            width: 360px;
+            height: 50px;
+            background-color: white;
+        }
+        input {
+            background-color: white;
+        }
+        .height{
+            text-align: center;
+            width: 420px;
+        }
+        .salary{
+            text-align: center;
+            width: 420px;
+            margin-left: 5px;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Please Enter Your Details For Our Dating Website!</h1>
     <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
@@ -22,7 +87,7 @@
             <label for="name">Name:</label>
             <input type="text" name="fullname" placeholder="Your full name" required>
             <br>
-            <label for="radio">Gender:</label>
+            <label for="gender">Gender:</label>
             <input type="radio" name="gender" value="Male" required>Male
             <input type="radio" name="gender" value="Female" required>Female
             <br>
@@ -33,7 +98,7 @@
             <input type="date" name="dob">
             <br>
             <label for="color">Favourite Color:</label>
-            <input type="color" name="color" >
+            <input type="color" name="color">
             <br>
             <label for="country">Which Country:</label>
             <select>
@@ -47,14 +112,19 @@
         </fieldset>
         <fieldset>
             <legend>Your indicators</legend>
-            <label for="height">Height:</label>
-            Short
-            <input type="range" name="height" min="0" max="100">
-            Tall <br>
-            <label for="salary">Salary:</label>
-            Poor
-            <input type="range" name="salary" min="0" max="100">
-            Rich
+            <div class="height">
+                <label for="height">Height:</label>
+                <span class="low">Short</span>
+                <input type="range" name="height" min="0" max="100">
+                <span class="high">Tall</span>
+            </div>
+            <div class="salary">
+                <label for="salary">Salary:</label>
+                <span class="low">Poor</span>
+                <input type="range" name="salary" min="0" max="100">
+                <span class="high">Rich</span>
+            </div>
+
         </fieldset>
         <fieldset>
             <legend>Your Contact Information</legend>
@@ -65,7 +135,7 @@
             <input type="tel" name="tel">
             <br>
             <label for="address">Address:</label>
-            <textarea rows="2" cols="20"></textarea>
+            <textarea></textarea>
             <br>
             <label for="contact">Method to contact you:</label>
             <input type="checkbox" name="contact" value="email">Email
@@ -75,4 +145,5 @@
         <input type="submit" name="submit" value="Submit">
     </form>
 </body>
+
 </html>
