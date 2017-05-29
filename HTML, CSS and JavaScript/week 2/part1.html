@@ -7,18 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Guessing Game</title>
     <script>
-        var colors = ["blue", "green", "white", "black", "grey", "pink", "yellow"];
+        var colors = ["blue", "green", "white", "black", "grey", "pink", "yellow", "cyan", "magenta", "orange", "red"];
+        colors = colors.sort();
         var count = 0;
         var guess_input;
         var target_index;
         var target;
+
         do_game();
 
         function do_game() {
             target_index = Math.floor(Math.random() * (colors.length - 1));
             target = colors[target_index];
+            alert(target);
             while (target!==guess_input) {
-                guess_input = prompt("which color i choosed?");
+                guess_input = prompt("I am thinking of one of these colors:\n\n" + colors +"\n\nWhat color am I thinking of?");
                 count++;
             }
         }
