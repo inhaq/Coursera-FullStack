@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Guessing Game</title>
-    <script>
+   
+</head>
+
+<body onload="do_game()">
+ <script>
         var colors = ["blue", "green", "white", "black", "grey", "pink", "yellow", "cyan", "magenta", "orange", "red"];
         colors = colors.sort();
         var count = 0;
         var guess_input;
         var target_index;
         var target;
-
-        do_game();
 
         function do_game() {
             target_index = Math.floor(Math.random() * (colors.length - 1));
@@ -27,10 +29,6 @@
         }
 
     </script>
-</head>
-
-<body>
-
 </body>
 
 </html>
