@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Guessing Game</title>
-    <script>
+    
+</head>
+
+<body onload="do_game()">
+
+<script>
         var colors = ["blue", "green", "white", "black", "grey", "pink", "yellow", "cyan", "magenta", "orange", "red"];
         colors = colors.sort();
         var count = 0;
@@ -14,22 +19,44 @@
         var target_index;
         var target;
 
-        do_game();
+        
 
         function do_game() {
             target_index = Math.floor(Math.random() * (colors.length - 1));
             target = colors[target_index];
             alert(target);
-            while (target!==guess_input) {
-                guess_input = prompt("I am thinking of one of these colors:\n\n" + colors +"\n\nWhat color am I thinking of?");
+            while (guess_input !== target) {
+                guess_input = prompt("I am thinking of one of these colors:\n\n" + colors +
+                    "\n\nWhat color am I thinking of?");
                 count++;
+                check_guess();
             }
         }
 
-    </script>
-</head>
+        function check_guess() {
+            if (colors.indexOf(guess_input) === -1) {
+                alert("I don’t recognize that color!");
+                return false;
+                }
+                else if(target < guess_input){
+                    alert("Your input is alphabetically higher than mine!");
+                    return false;
+                }
+                else if(target > guess_input){
+                    alert("Your input is alphabetically lower than mine!");
+                    return false;
+                }
+                else{
+                    document.body.style.backgroundColor = guess_input;
+                    setTimeout(() => {
+                        alert("You are right! You took " + count + " guesses!");
+                    }, 50);
+                    return true;
+                }
+            }
 
-<body>
+        
+    </script>
 
 </body>
 
