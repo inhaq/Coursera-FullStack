@@ -43,6 +43,10 @@
                 var leftSide = document.getElementById('leftSide');
                 leftSide.appendChild(image);
             }
+            var theRightSide = document.getElementById('rightSide');
+            var leftSideImages = theLeftSide.cloneNode(true);
+            leftSideImages.removeChild(leftSideImages.childNodes[0]);
+            theRightSide.appendChild(leftSideImages);
         }
     </script>
 </body>
