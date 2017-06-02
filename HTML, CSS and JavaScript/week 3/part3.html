@@ -32,9 +32,9 @@
     <div id="rightSide"></div>
 
     <script>
+        var numberOfFaces = 5;
+        var theLeftSide = document.getElementById('leftSide');
         function generateFaces() {
-            var numberOfFaces = 5;
-            var theLeftSide = document.getElementById('leftSide');
             for (var i = 0; i < numberOfFaces; i++) {
                 var image = document.createElement("img");
                 image.src = "smile.png";
