@@ -13,3 +13,7 @@ Project: Color Guessing Game
 
 ### Week 3 for Advanced JavaScript
 Project: Matching Game
+
+# Course Completion Certificate
+
+![Certificate](https://github.com/inhaq/Coursera-FullStack/raw/master/1.%20HTML%2C%20CSS%20and%20JavaScript/Coursera%208Y2V3657JB4S.png)
